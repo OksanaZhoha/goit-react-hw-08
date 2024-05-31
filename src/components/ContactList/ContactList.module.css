@@ -1,5 +1,5 @@
 .contactListItem {
-  border: 1px solid #212121;
+  border: 1px solid black;
   display: flex;
   width: 300px;
   justify-content: space-between;
