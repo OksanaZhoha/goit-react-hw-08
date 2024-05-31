@@ -3,7 +3,7 @@ import { useId } from "react";
 import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
@@ -24,14 +24,14 @@ export default function ContactForm() {
       .max(50, "Too Long!")
       .required("Required"),
     number: Yup.string()
-      .min(3, "Too Short!")
-      .max(50, "Too Long!")
+      .min(9, "Too Short!")
+      .max(9, "Too Long!")
       .required("Required"),
   });
 
   const nameId = useId();
   const numberId = useId();
-
+  
   return (
     <Formik
       initialValues={initialValues}
@@ -40,24 +40,33 @@ export default function ContactForm() {
     >
       <Form className={css.formContainer}>
         <div className={css.formContainerItem}>
-          <label htmlFor={nameId}>Name</label>
+          <div className={css.errorContainer}>
+            <label htmlFor={nameId}>Name</label>
+            <ErrorMessage className={css.error} name="name" component="span" />
+          </div>
+
           <Field
             className={css.inputFormName}
             type="text"
             name="name"
             id={nameId}
           />
-          <ErrorMessage className={css.error} name="name" component="span" />
         </div>
         <div className={css.formContainerItem}>
-          <label htmlFor={numberId}>Number</label>
+          <div className={css.errorContainer}>
+            <label htmlFor={numberId}>Number</label>
+            <ErrorMessage
+              className={css.error}
+              name="number"
+              component="span"
+            />
+          </div>
           <Field
             className={css.inputFormNumber}
-            type="text"
+            type="number"
             name="number"
             id={numberId}
           />
-          <ErrorMessage className={css.error} name="number" component="span" />
         </div>
         <button className={css.btnForm} type="submit">
           Add contact
