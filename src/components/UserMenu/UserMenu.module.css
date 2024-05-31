@@ -1,0 +1,18 @@
+.userContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.logOutBtn {
+  background-color: blue;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+}
+
+.logOutBtn:hover {
+  background-color: darkblue;
+  cursor: pointer;
+}
