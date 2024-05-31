@@ -20,7 +20,17 @@
 }
 
 .btnForm {
-  padding: 5px;
+  background-color: blue;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+}
+
+.btnForm:hover {
+  background-color: darkblue;
+  cursor: pointer;
 }
 
 .formContainerItem {
@@ -31,4 +41,9 @@
 
 .error {
   color: red;
+}
+
+.errorContainer {
+  display: flex;
+  gap: 10px;
 }
