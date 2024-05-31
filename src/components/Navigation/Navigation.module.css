@@ -1,0 +1,15 @@
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  margin-bottom: 7px;
+  color: blue;
+  font-weight: 700;
+}
+
+.navList {
+  display: flex;
+  gap: 10px;
+}
